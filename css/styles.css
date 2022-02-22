@@ -1,0 +1,39 @@
+
+
+@font-face {
+    font-family: DS-DIGII ;
+    src: url(../fonts/DS-DIGII.TTF);
+}
+
+html, body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.relogio{
+  font-family: DS-DIGII;
+  background-color: black;
+  color: gold;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.display{
+  background-color: black;
+  width: 600px;
+  height: 300px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 90px;
+}
+
+.creator{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
