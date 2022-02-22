@@ -1,12 +1,13 @@
 var iniciouReproducao = false;
+var apresentouMsgUsuario = false;
 function setTime()
 {
-    //iniciouReproducao = true;
     let display = document.querySelector('h1');
     let today = new Date();
     let time = formatSegundos(today.getHours()) + ":" + formatSegundos(today.getMinutes()) + ":" + formatSegundos(today.getSeconds());
     display.textContent = time;
-    document.body.addEventListener("click", reproduceTick);
+    ConfirmarReproducao();
+    //document.body.addEventListener("click", reproduceTick);
 }
 
 function formatSegundos(segundos){
@@ -24,6 +25,14 @@ function reproduceTick()
 
 }
 
-//if (iniciouReproducao)
+function ConfirmarReproducao()
+{
+  if (apresentouMsgUsuario) return;
+  if (confirm("Para experiência completa, é necessário ativar a reprodução de som. Ativar?"))
+    reproduceTick();
+  else alert("Caso queira ativar o som, basta atualizar a página.");
+  apresentouMsgUsuario = true;
+}
+
 setInterval(setTime,1000);
 
