@@ -6,8 +6,7 @@ function setTime()
     let today = new Date();
     let time = formatSegundos(today.getHours()) + ":" + formatSegundos(today.getMinutes()) + ":" + formatSegundos(today.getSeconds());
     display.textContent = time;
-    ConfirmarReproducao();
-    document.body.addEventListener("click", reproduceTick());
+    //ConfirmarReproducao();
 }
 
 function formatSegundos(segundos){
@@ -28,10 +27,7 @@ function reproduceTick()
 function ConfirmarReproducao()
 {
   if (apresentouMsgUsuario) return;
-  if (confirm("Para experiência completa, é necessário ativar a reprodução de som. Ativar?"))
-  //console.log('entrou')  
   reproduceTick();
-  else alert("Caso queira ativar o som, basta atualizar a página.");
   apresentouMsgUsuario = true;
 }
 
